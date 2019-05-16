@@ -1,5 +1,7 @@
 package com.scudstir.tasks;
 
+import java.util.Scanner;
+
 public class Task5 {
 
     /**
@@ -25,6 +27,16 @@ public class Task5 {
      * 2
      */
     public static void main(String[] args) {
+        System.out.println("Введите количество слов:");
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        System.out.println("Введите строку:");
+        Scanner scanner1 = new Scanner(System.in);
+        String [] strings = new String[num];
+        for (int a = 0; a<num; a++){
+            strings[a] = scanner.next();
+        }
+
         // TODO реализация
 
         // TODO System.out.println(countWordsWithSameNumVowelsAndConsonants);

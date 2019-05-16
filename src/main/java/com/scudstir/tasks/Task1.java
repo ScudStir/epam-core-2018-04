@@ -61,6 +61,7 @@ public class Task1 {
 
             System.out.println("MIN (" + minLength + "): " + minString);
             System.out.println("MAX (" + maxLength + "): " + maxString);
+            System.out.println(Double.MIN_VALUE);
         } else {
             System.out.println("Вы ввели неверное количество строк");
 

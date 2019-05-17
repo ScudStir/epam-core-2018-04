@@ -1,7 +1,5 @@
 package com.scudstir.tasks;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Task4 {
@@ -33,16 +31,15 @@ public class Task4 {
     // TODO реализация
 
     // TODO System.out.println(wordWithMinimalNumDiffLetters);Так ч
-    static int count(String a) {
-        char[] characters = a.toCharArray();
-        int letterCount = 1;
-        for (int b = 0; b < characters.length; b++) {
-            if (b + 1 < characters.length && characters[b] != characters[b + 1]) {
-                letterCount++;
+    private static int countLetters(String a) {
+        StringBuilder uniqueString = new StringBuilder(String.valueOf(a.charAt(0)));
+        for (int b = 1; b < a.length(); b++) {
+            String temp = String.valueOf(a.charAt(b));
+            if (!uniqueString.toString().contains(temp)) {
+                uniqueString.append(temp);
             }
-            return letterCount;
         }
-        return letterCount;
+        return uniqueString.length();
     }
 
     public static void main(String[] args) {
@@ -50,25 +47,22 @@ public class Task4 {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
         System.out.println("Введите слова, состоящие из символов английского алфавита:");
-        String[] words = new String[num];
         Scanner scanner1 = new Scanner(System.in);
-        for (int a = 0; a < num; a++) {
-            words[a] = scanner1.next();
-        }
-        Arrays.sort(words, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (count(o1) > count(o2)) {
-                    return 1;
-                } else if (count(o1) < count(o2)) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+        int length = Integer.MAX_VALUE;
+        int counter = 0;
+        String foundString = "";
+        do {
+            String temp = scanner1.next();
+            int tempLetters = countLetters(temp);
+            if (tempLetters < length) {
+                length = tempLetters;
+                foundString = temp;
             }
-        });
-        String wordWithMinimalNumDiffLetters = words[0];
-        System.out.println(wordWithMinimalNumDiffLetters);
+            counter++;
+        } while (counter < num);
+
+
+        System.out.println(foundString);
         scanner.close();
         scanner1.close();
     }

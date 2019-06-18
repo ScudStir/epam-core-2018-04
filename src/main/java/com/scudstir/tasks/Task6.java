@@ -56,7 +56,7 @@ public class Task6 {
         String result = "";
         for (int i = 0; i < num; i++) {
             String string = scanner1.next();
-            if (searchWord(string)) {
+            if (string.length() > 1 && searchWord(string)) {
                 result = string;
                 break;
             }

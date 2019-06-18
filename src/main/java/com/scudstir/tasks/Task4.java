@@ -28,9 +28,6 @@ public class Task4 {
      * Выходные данные:
      * a
      */
-    // TODO реализация
-
-    // TODO System.out.println(wordWithMinimalNumDiffLetters);Так ч
     private static int countLetters(String a) {
         StringBuilder uniqueString = new StringBuilder(String.valueOf(a.charAt(0)));
         for (int b = 1; b < a.length(); b++) {
@@ -60,8 +57,6 @@ public class Task4 {
             }
             counter++;
         } while (counter < num);
-
-
         System.out.println(foundString);
         scanner.close();
         scanner1.close();

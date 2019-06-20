@@ -1,7 +1,16 @@
 package com.scudstir.tasks;
 
-public class Task11 {
+import java.util.Scanner;
 
+public class Task11 {
+    private static int sumOfValue(int a) {
+        if (a < 10) {
+            return a;
+        } else {
+            return a % 10 + sumOfValue(a / 10);
+
+        }
+    }
     /**
      * Ввести число с консоли.
      * С использованием рекурсии вычислить сумму цифр, из которых составлено указанное число.
@@ -29,6 +38,11 @@ public class Task11 {
      * 5
      */
     public static void main(String[] args) {
-        // TODO реализация
+        System.out.println("Введите число:");
+        Scanner scanner = new Scanner(System.in);
+        int value = Math.abs(scanner.nextInt());
+        int sum = sumOfValue(value);
+        System.out.println(sum);
+
     }
 }

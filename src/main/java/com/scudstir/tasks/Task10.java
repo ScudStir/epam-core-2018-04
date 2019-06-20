@@ -1,5 +1,7 @@
 package com.scudstir.tasks;
 
+import java.util.Scanner;
+
 public class Task10 {
 
     /**
@@ -30,6 +32,22 @@ public class Task10 {
      * YES
      */
     public static void main(String[] args) {
-        // TODO реализация
+        System.out.println("Введите число:");
+        Scanner scanner = new Scanner(System.in);
+        int value = scanner.nextInt();
+        if (value == 0){
+            System.out.println("NO");
+        }
+       else  {
+           int result = value&(value-1);
+           if (result == 0){
+               System.out.println("YES");
+           }
+           else {
+               System.out.println("NO");
+           }
+        }
+
+
     }
 }
